@@ -1,28 +1,28 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './ContactForm.module.css';
+import './ContactForm.module.css'
 
 export class ContactForm extends Component {
-    state = {
-        name: '',
-        number: '',
-    };
+  state = {
+    name: '',
+    number: '',
+  };
 
- 
-    handleChange = event => {
-        const { name, value } = event.currentTarget;
-        this.setState({ [name]: value })
-    };
-    handleSubmit = event => {
-        event.preventDefault();
-        this.props.onSubmit(this.state);
-        this.setState = ({
-            name: '',
-            number: '',
-        });
-    };
+  handleChange = event => {
+    const { name, value } = event.currentTarget;
+    this.setState({ [name]: value });
+  };
 
-render() {
+  handleSubmit = event => {
+    event.preventDefault();
+    this.props.onSubmit(this.state);
+    this.setState({
+      name: '',
+      number: '',
+    });
+  };
+
+  render() {
     const { name, number } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
@@ -49,11 +49,11 @@ render() {
         <button type="submit">Add contact</button>
       </form>
     );
-    };
-};
+  }
+}
 
-ContactForm.propTypes = {
+ContactForm.prototypes = {
     name: PropTypes.string.isRequired,
     number: PropTypes.number.isRequired,
-    onSubmit: PropTypes.func.isRequired
-}
+    onSubmit: PropTypes.func.isRequired,
+  };
