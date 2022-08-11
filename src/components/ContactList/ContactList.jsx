@@ -8,10 +8,10 @@ const ContactList = ({ contacts, deleteContact }) => (
         <li key={id}>
           <p>
             {name}: {number}
-          </p>
           <button className={css.listDeleteButton} type="button" onClick={() => deleteContact(id)}>
             Delete
           </button>
+          </p>
         </li>
       );
     })}
@@ -21,8 +21,8 @@ const ContactList = ({ contacts, deleteContact }) => (
 export default ContactList;
 
 ContactList.propTypes = {
-  name: PropTypes.string.isRequired,
-  number: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  number: PropTypes.string,
+  id: PropTypes.string,
   deleteContact: PropTypes.func.isRequired,
 };
