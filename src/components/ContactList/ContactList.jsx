@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import css from './ContactList.module.css'
+import css from './ContactList.module.css';
 
 const ContactList = ({ contacts, deleteContact }) => (
   <ul>
@@ -8,9 +8,13 @@ const ContactList = ({ contacts, deleteContact }) => (
         <li key={id}>
           <p>
             {name}: {number}
-          <button className={css.listDeleteButton} type="button" onClick={() => deleteContact(id)}>
-            Delete
-          </button>
+            <button
+              className={css.listDeleteButton}
+              type="button"
+              onClick={() => deleteContact(id)}
+            >
+              Delete
+            </button>
           </p>
         </li>
       );
@@ -24,9 +28,9 @@ ContactList.propTypes = {
   contacts: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      number: PropTypes.number.isRequired,
+      name: PropTypes.string,
+      number: PropTypes.string,
     })
-  ).isRequired,
+  ),
   deleteContact: PropTypes.func.isRequired,
 };
